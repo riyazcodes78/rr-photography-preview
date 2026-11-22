@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RR Digital Photography — Every Frame Holds a Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..900;1,6..96,500..900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blk:#0A0A0B;--iv:#F2EBDD;--amb:#FF9F1C;--red:#E63B2E;--grn:#4DFF9A;--d:"Bodoni Moda",Georgia,serif;--b:"Figtree",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--blk);color:var(--iv);font:400 17px/1.5 var(--b);overflow-x:hidden}
+h1,h2,h3{font-family:var(--d);font-weight:800;margin:0;line-height:.8;letter-spacing:-.04em}
+a{color:inherit}:focus-visible{outline:3px solid var(--amb);outline-offset:3px}
+.meta{font:600 11px/1.3 var(--b);letter-spacing:.16em;text-transform:uppercase}
+.c{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .1em}.c i{display:inline-block;font-style:inherit}
+body::after{content:"";position:fixed;inset:-50%;z-index:85;pointer-events:none;opacity:.14;mix-blend-mode:overlay;animation:gr .9s steps(6) infinite;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes gr{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-5%,-2%)}80%{transform:translate(4%,4%)}}
+.fr{position:relative;overflow:hidden;background:#222;margin:0}.fr .in{position:absolute;inset:-6% 0;will-change:transform}
+.fr svg,.fr img{width:100%;height:100%;display:block;object-fit:cover}.fr svg{transition:transform 1.3s cubic-bezier(.2,.7,.2,1)}.fr:hover svg{transform:scale(1.06)}
+.fr figcaption{position:absolute;left:12px;bottom:10px;z-index:3}
+.leak::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:screen;opacity:0;transform:translateX(-30%);transition:opacity .7s,transform 1.2s;
+background:radial-gradient(60% 90% at 20% 40%,rgba(255,159,28,.85),transparent 70%),radial-gradient(40% 70% at 80% 80%,rgba(230,59,46,.6),transparent 70%)}
+.leak:hover::before,.leak:focus-visible::before{opacity:1;transform:none}
+header{position:fixed;inset:0 0 auto;z-index:70;display:flex;justify-content:space-between;align-items:center;padding:calc(16px + env(safe-area-inset-top,0px)) 4vw 16px;color:#fff;mix-blend-mode:difference}
+.brand{font:800 22px var(--d);text-decoration:none;letter-spacing:.02em}
+nav{display:flex;align-items:center;gap:24px}nav a,nav button{font:500 14px var(--b);text-decoration:none;background:none;border:0;color:inherit;cursor:pointer;padding:6px 0}
+nav a:hover,nav button:hover{text-decoration:underline;text-underline-offset:5px}
+.burger{display:none;background:none;border:0;color:inherit;font:600 14px var(--b);cursor:pointer;padding:8px}
+@media(max-width:760px){.burger{display:block}nav{position:fixed;inset:0;background:var(--blk);color:var(--iv);flex-direction:column;align-items:flex-start;justify-content:center;padding:0 8vw;gap:6px;transform:translateY(-100%);transition:transform .6s cubic-bezier(.7,0,.2,1);mix-blend-mode:normal}
+nav.open{transform:none}nav a{font:800 13vw/1.1 var(--d)}nav button{font-size:16px;margin-top:20px}}
+.shut{position:fixed;inset:0;z-index:95;background:#000;pointer-events:none;--r:150vmax;-webkit-mask:radial-gradient(circle at 50% 50%,transparent var(--r),#000 calc(var(--r) + 2px));mask:radial-gradient(circle at 50% 50%,transparent var(--r),#000 calc(var(--r) + 2px))}
+.flash{position:fixed;inset:0;z-index:96;background:#fff;opacity:0;pointer-events:none}
+/* 01 */
+.open{position:relative;height:100svh;min-height:560px;overflow:hidden;background:var(--blk)}
+.shot{position:absolute;inset:0}.shot .in{inset:-8% 0}
+.open::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent 55%),radial-gradient(120% 90% at 50% 40%,transparent 50%,rgba(0,0,0,.5));pointer-events:none}
+.ring{position:absolute;left:50%;top:50%;width:min(60vmin,520px);aspect-ratio:1;margin:calc(min(60vmin,520px)/-2) 0 0 calc(min(60vmin,520px)/-2);z-index:4;pointer-events:none}
+.af{position:absolute;left:50%;top:50%;width:90px;height:90px;margin:-45px 0 0 -45px;z-index:5;pointer-events:none;--c:#fff}
+.af i{position:absolute;width:22px;height:22px;border:2px solid var(--c)}
+.af i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0}.af i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0}.af i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0}.af i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0}
+.open h1{position:absolute;z-index:6;left:-1vw;bottom:-3vw;font-size:clamp(130px,34vw,560px);font-style:italic;color:#fff;mix-blend-mode:difference;white-space:nowrap}
+.tag{position:absolute;z-index:6;left:4vw;top:15vh;margin:0;font:italic 500 clamp(24px,3vw,44px)/1.05 var(--d);max-width:14ch}
+.hud{position:absolute;z-index:6;right:4vw;top:15vh;text-align:right;line-height:1.9}
+.vf{position:absolute;inset:12vh 3vw 6vh;z-index:5;pointer-events:none;border:1px solid rgba(255,255,255,.28)}
+.cue{position:absolute;z-index:6;right:4vw;bottom:4vh;text-decoration:none}
+@media(max-width:760px){.hud{display:none}.open h1{font-size:44vw;bottom:2vh}.tag{top:13vh}}
+/* 02 film */
+.stage{position:relative;height:100svh;overflow:hidden;background:#070708;perspective:1400px}
+.strip{position:absolute;left:0;top:50%;margin-top:-30vh;height:60vh;display:flex;gap:2.2vh;padding:0 2vh;align-items:center;background:#141416;box-shadow:0 40px 80px rgba(0,0,0,.8);transform-style:preserve-3d;will-change:transform}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:2.6vh;background:repeating-linear-gradient(90deg,transparent 0 1.1vh,#E9E2D1 1.1vh 3.3vh,transparent 3.3vh 4.4vh);opacity:.9}
+.strip::before{top:1.6vh}.strip::after{bottom:1.6vh}
+.fm{flex:none;width:58vh;height:38.6vh;position:relative}.fm .fr{position:absolute;inset:0}
+.fm .meta{position:absolute;left:0;bottom:-3.4vh;color:var(--amb);font-size:10px}
+.ex{position:absolute;inset:0;z-index:5;opacity:0;pointer-events:none}.ex .fr{position:absolute;inset:0}
+.stage .lab{position:absolute;z-index:6;left:4vw;bottom:4vh}
+/* 03 bright */
+.bright{background:var(--iv);color:#15120E;padding:16vh 4vw}
+.bright h2{font-size:clamp(70px,16vw,260px);font-style:italic;margin-bottom:8vh}
+.mg{display:grid;grid-template-columns:repeat(12,1fr);gap:0 2vw;align-items:start}
+.m1{grid-column:1/8;aspect-ratio:4/5}.m2{grid-column:8/13;aspect-ratio:1;margin-top:26vh;z-index:2}
+.m3{grid-column:3/13;aspect-ratio:21/9;margin-top:6vh}.n{font:800 clamp(60px,10vw,160px)/.8 var(--d);font-style:italic;color:var(--red)}
+.mg .cap{display:flex;justify-content:space-between;align-items:end;margin:12px 0 0}
+.mg>div{display:block}
+@media(max-width:760px){.mg>*{grid-column:1/-1!important;margin:0 0 6vh!important}}
+/* 04 worlds */
+.worlds{background:var(--blk);padding:16vh 4vw 8vh}
+.worlds h2{font-size:clamp(70px,16vw,260px);margin-bottom:8vh}
+.w{aspect-ratio:21/9;margin-bottom:6vh;position:relative}.w .fr{position:absolute;inset:0}
+.w h3{position:absolute;z-index:4;left:3vw;bottom:-.1em;font-size:clamp(54px,11vw,190px);font-style:italic;color:#fff;mix-blend-mode:difference}
+.w .meta{position:absolute;z-index:4;right:3vw;top:3vw}
+@media(max-width:760px){.w{aspect-ratio:4/5}}
+/* 05 about + services */
+.about{background:var(--iv);color:#15120E;padding:16vh 4vw}
+.ag{display:grid;grid-template-columns:7fr 5fr;gap:6vw;align-items:center}
+.cs{background:#15120E;padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
+.cs .fr{aspect-ratio:3/2}.cs .meta{color:var(--amb);font-size:10px;position:absolute;left:6px;bottom:4px;z-index:3}
+.cs .pt{aspect-ratio:3/2;position:relative}.cs .pt .fr{position:absolute;inset:0}
+.pen{position:absolute;pointer-events:none;overflow:visible;z-index:5}
+.about h2{font-size:clamp(54px,9vw,140px);font-style:italic}
+.edit{border-left:3px solid var(--red);padding-left:16px;margin:24px 0 0;max-width:42ch}
+.sv{margin-top:14vh;border-top:2px solid #15120E}.row{border-bottom:2px solid #15120E}
+.row button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;font:800 clamp(36px,6vw,92px)/.9 var(--d);font-style:italic;transition:padding .4s,color .4s}
+.row button:hover{padding-left:2vw;color:var(--red)}.row button:focus-visible{outline:3px solid var(--amb)}
+.row p{margin:0;max-width:50ch;height:0;overflow:hidden;transition:height .5s}.row.on p{height:68px}
+@media(max-width:760px){.ag{grid-template-columns:1fr}.cs{grid-template-columns:repeat(2,1fr)}}
+/* 06 contact */
+.contact{background:var(--blk);padding:18vh 4vw 8vh}
+.contact h2{font-size:clamp(80px,19vw,320px);font-style:italic}.contact h2 span{display:block}
+.ct{display:grid;grid-template-columns:5fr 6fr;gap:6vw;margin-top:8vh;align-items:start}
+form{display:grid;gap:18px}label{display:grid;gap:4px;font-size:14px;opacity:.85}
+input,select,textarea{font:inherit;color:var(--iv);background:transparent;border:0;border-bottom:1px solid var(--iv);padding:10px 0;border-radius:0;color-scheme:dark}
+textarea{min-height:90px}select option{color:#15120E}
+.btn{font:700 16px var(--b);background:var(--iv);color:#15120E;border:0;border-radius:99px;padding:18px 34px;cursor:pointer;justify-self:start;transition:transform .3s,background .3s}
+.btn:hover{background:var(--amb);transform:scale(1.05)}
+#out{display:none;border:1px solid rgba(242,235,221,.4);padding:20px;white-space:pre-wrap;font-size:15px;margin-top:18px}#out.on{display:block}
+footer{padding:4vh 4vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--blk);border-top:1px solid #2a2a2a}
+@media(max-width:760px){.ct{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,body::after{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div class="shut" aria-hidden="true"></div><div class="flash" aria-hidden="true"></div>
+<header>
+  <a class="brand" href="#top">RR <span style="color:var(--amb)">DIGITAL PHOTOGRAPHY</span></a>
+  <button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main"><a href="#film">Roll</a><a href="#moments">Moments</a><a href="#worlds">Worlds</a><a href="#about">About</a><a href="#contact">Enquire</a><button id="snd" aria-pressed="false">Shutter sound: off</button></nav>
+</header>
+<main id="top">
+<section class="open" aria-label="Opening">
+  <figure class="fr shot" data-art="0" aria-label="Opening photograph concept image"></figure>
+  <div class="vf" aria-hidden="true"></div>
+  <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width=".8"><circle cx="100" cy="100" r="96"/><circle class="rin" cx="100" cy="100" r="70" stroke-dasharray="2 5"/><circle cx="100" cy="100" r="46" opacity=".5"/></g></svg>
+  <div class="af" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <p class="tag">Every celebration holds a thousand stories.</p>
+  <div class="hud meta" aria-hidden="true">RR Digital Photography<br>Ponniammanmedu · Chennai<br>Photography service</div>
+  <h1 aria-label="RR"><span class="sp">RR</span></h1>
+  <a class="cue meta" href="#film">Scroll to explore RR</a>
+</section>
+
+<section id="film" aria-label="Film roll">
+  <div class="stage">
+    <div class="strip" id="strip">
+      <div class="fm"><figure class="fr" data-art="1"></figure><span class="meta">▸ 01 · concept image</span></div>
+      <div class="fm"><figure class="fr" data-art="2"></figure><span class="meta">▸ 02 · concept image</span></div>
+      <div class="fm"><figure class="fr" data-art="3"></figure><span class="meta">▸ 03 · concept image</span></div>
+      <div class="fm"><figure class="fr" data-art="4"></figure><span class="meta">▸ 04 · concept image</span></div>
+      <div class="fm" id="hero-fm"><figure class="fr" data-art="5"></figure><span class="meta">▸ 05 · concept image</span></div>
+      <div class="fm"><figure class="fr" data-art="1"></figure><span class="meta">▸ 06 · concept image</span></div>
+      <div class="fm"><figure class="fr" data-art="2"></figure><span class="meta">▸ 07 · concept image</span></div>
+    </div>
+    <div class="ex" aria-hidden="true"><figure class="fr" data-art="5"></figure></div>
+    <span class="meta lab">RR archive · Moments in motion</span>
+  </div>
+</section>
+
+<section class="bright" id="moments">
+  <h2>Moments</h2>
+  <div class="mg">
+    <div class="m1"><figure class="fr leak" data-art="2" tabindex="0" style="aspect-ratio:4/5"></figure><div class="cap"><span class="meta">Frame title · concept image</span><span class="n">01</span></div></div>
+    <div class="m2"><figure class="fr leak" data-art="3" tabindex="0" style="aspect-ratio:1"></figure><div class="cap"><span class="n">02</span><span class="meta">Frame title · concept image</span></div></div>
+    <div class="m3"><figure class="fr leak" data-art="4" tabindex="0" style="aspect-ratio:21/9"></figure><div class="cap"><span class="meta">Frame title · concept image</span><span class="n">03</span></div></div>
+  </div>
+</section>
+
+<section class="worlds" id="worlds">
+  <h2>Celebrations</h2>
+  <div class="w"><figure class="fr leak" data-art="3" tabindex="0"></figure><span class="meta">World one · concept image</span><h3>One</h3></div>
+  <div class="w"><figure class="fr leak" data-art="5" tabindex="0"></figure><span class="meta">World two · concept image</span><h3>Two</h3></div>
+  <div class="w"><figure class="fr leak" data-art="1" tabindex="0"></figure><span class="meta">World three · concept image</span><h3>Three</h3></div>
+</section>
+
+<section class="about" id="about">
+  <div class="ag">
+    <div class="cs" id="cs">
+      <figure class="fr" data-art="2"><span class="meta">12</span></figure><figure class="fr" data-art="4"><span class="meta">13</span></figure>
+      <div class="pt"><figure class="fr" data-art="5" aria-label="Portrait concept image"><span class="meta">14 · portrait</span></figure>
+        <svg class="pen" viewBox="0 0 100 70" style="left:-12%;top:-18%;width:124%;height:136%" aria-hidden="true"><path id="pen" d="M52 6C82 2 98 20 94 38 90 58 62 66 34 62 8 58 2 36 12 20 22 6 46 4 66 8" fill="none" stroke="#E63B2E" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+      <figure class="fr" data-art="1"><span class="meta">15</span></figure><figure class="fr" data-art="3"><span class="meta">16</span></figure><figure class="fr" data-art="0"><span class="meta">17</span></figure>
+    </div>
+    <div><h2>Behind the lens</h2>
+      <p class="edit">RR Digital Photography is a photography service based in Ponniammanmedu, Chennai. This concept presents a visual home for its photography work and customer enquiries.</p>
+      <p class="edit">Located at 1/3, Kamatchi Amman Nagar, Nagavalli Nagar, Ponniammanmedu, Chennai — 600110. The photographs shown here are temporary concept images and should be replaced with RR Digital Photography’s own work after approval.</p></div>
+  </div>
+  <div class="sv" id="sv">
+    <div class="row"><button aria-expanded="false">Photo prints & albums <span class="meta">04</span></button><p>Discuss available print and album options directly with RR Digital Photography.</p></div>
+
+    <div class="row on"><button aria-expanded="true">Candid photography <span class="meta">01</span></button><p>Natural expressions and the moments that happen between the poses.</p></div>
+    <div class="row"><button aria-expanded="false">Traditional photography & video <span class="meta">02</span></button><p>Classic coverage of ceremonies, rituals, family portraits and important details.</p></div>
+    <div class="row"><button aria-expanded="false">Event & portrait photography <span class="meta">03</span></button><p>Photography coverage for occasions, portraits and moments worth keeping. Confirm the exact services and packages with the business.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2><span class="sp">Take</span><span class="sp">the shot.</span></h2>
+  <div class="ct">
+    <p style="max-width:34ch;margin:0">Looking for photography services? Send RR Digital Photography your requirements.</p>
+    <div>
+      <p class="edit" style="border-color:var(--amb);margin:0 0 24px">1/3, Kamatchi Amman Nagar, Nagavalli Nagar, Ponniammanmedu, Chennai, Tamil Nadu — 600110<br><br><strong><a href="tel:+919500001792">+91 95000 01792</a></strong><br><br><a href="https://wa.me/919498659807" target="_blank" rel="noopener">WhatsApp RR Digital Photography ↗</a><br><br><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a><br><br><a href="https://www.google.com/maps/search/?api=1&query=RR+Digital+Photography+1%2F3+Kamatchi+Amman+Nagar+Ponniammanmedu+Chennai" target="_blank" rel="noopener">Find on Google Maps ↗</a><br><br>Google Business Profile: 4.9 ★ · 55 reviews</p>
+      <form id="f">
+        <label>Your name<input name="n" required autocomplete="name"></label>
+        <label>Your phone<input name="e" type="tel" required autocomplete="tel"></label>
+        <label>Event type<select name="s"><option>Event photography</option><option>Portrait photography</option><option>Photo prints / albums</option><option>Other photography enquiry</option></select></label>
+        <label>Preferred date<input name="d" type="date"></label>
+        <label>About the shoot<textarea name="m"></textarea></label>
+        <button class="btn" type="submit">Prepare enquiry</button>
+      </form>
+      <div id="out" role="status" aria-live="polite"></div>
+      <button class="btn" id="cp" type="button" style="display:none;margin-top:14px">Copy enquiry</button>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="meta"><span>RR Digital Photography · concept preview</span><span>Temporary Unsplash imagery · replace with RR's portfolio after approval</span><a href="#top">Back to top</a></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+// Curated Unsplash photographs for this concept preview.
+// Replace these URLs with NGB's own portfolio images after approval.
+var IMAGES=[
+ "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+ "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1800&q=88",
+ "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=88",
+ "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1800&q=88",
+ "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1800&q=88",
+ "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=88"
+];
+function art(i){
+ var url=IMAGES[i%IMAGES.length];
+ return '<img src="'+url+'" alt="Temporary Unsplash photography concept image" loading="eager">';
+}
+document.querySelectorAll("[data-art]").forEach(function(e){e.insertAdjacentHTML("afterbegin",'<div class="in">'+art(+e.dataset.art)+'</div>')});
+document.querySelectorAll(".sp").forEach(function(e){var t=e.textContent;e.setAttribute("aria-label",t);e.innerHTML=t.split("").map(function(c){return c==" "?" ":'<span class="c" aria-hidden="true"><i>'+c+'</i></span>'}).join("")});
+var $=function(q){return document.querySelector(q)};
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,ok=window.gsap&&window.ScrollTrigger;
+// Shutter sound: created only after the visitor turns it on
+var snd=$("#snd"),AC=null,on=false;
+snd.onclick=function(){on=!on;snd.setAttribute("aria-pressed",on);snd.textContent="Shutter sound: "+(on?"on":"off");if(on){AC=AC||new(window.AudioContext||window.webkitAudioContext)();click()}};
+function click(){if(!on||!AC)return;var t=AC.currentTime,n=AC.createBuffer(1,AC.sampleRate*.09,AC.sampleRate),d=n.getChannelData(0);
+ for(var i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);
+ var s=AC.createBufferSource(),g=AC.createGain();s.buffer=n;g.gain.value=.35;s.connect(g).connect(AC.destination);s.start(t);
+ var o=AC.createOscillator(),og=AC.createGain();o.frequency.setValueAtTime(160,t);o.frequency.exponentialRampToValueAtTime(50,t+.1);og.gain.setValueAtTime(.3,t);og.gain.exponentialRampToValueAtTime(.001,t+.12);o.connect(og).connect(AC.destination);o.start(t);o.stop(t+.13)}
+var sh=$(".shut"),fl=$(".flash");
+function pulse(a){if(!ok||reduce)return;click();gsap.fromTo(fl,{opacity:a||.85},{opacity:0,duration:.6,ease:"power2.out"})}
+// Shutter transition: iris closes, flash, iris opens
+function shutter(mid){if(!ok||reduce){mid();return}
+ gsap.timeline().to(sh,{"--r":"0vmax",duration:.45,ease:"power3.in"}).add(function(){click();mid()}).fromTo(fl,{opacity:1},{opacity:0,duration:.5,ease:"power2.out"}).to(sh,{"--r":"150vmax",duration:.6,ease:"power3.out"},"<.05")}
+var nav=$("#nav"),bg=$(".burger");
+function setNav(v){nav.classList.toggle("open",v);bg.setAttribute("aria-expanded",v);bg.textContent=v?"Close":"Menu"}
+bg.onclick=function(){setNav(!nav.classList.contains("open"))};
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(e){var t=$(a.getAttribute("href"));if(!t)return;e.preventDefault();setNav(false);
+ shutter(function(){t.scrollIntoView();if(ok)ScrollTrigger.refresh()})})});
+document.querySelectorAll(".row").forEach(function(r,k,all){var b=r.querySelector("button");b.onclick=function(){var o=!r.classList.contains("on");all.forEach(function(x){x.classList.remove("on");x.querySelector("button").setAttribute("aria-expanded",false)});r.classList.toggle("on",o);b.setAttribute("aria-expanded",o)}});
+var f=$("#f"),out=$("#out"),cp=$("#cp"),txt="";
+f.onsubmit=function(e){e.preventDefault();var d=new FormData(f);
+ txt="Enquiry for RR Digital Photography\nName: "+d.get("n")+"\nEmail: "+d.get("e")+"\nService: "+d.get("s")+"\nPreferred date: "+(d.get("d")||"Flexible")+"\nMessage: "+(d.get("m")||"—");
+ pulse(.9);out.textContent=txt;out.classList.add("on");cp.style.display="inline-block"};
+cp.onclick=function(){function done(){cp.textContent="Copied"}if(navigator.clipboard)navigator.clipboard.writeText(txt).then(done,function(){});else done()};
+if(!ok||reduce)return;
+gsap.registerPlugin(ScrollTrigger);
+// 01 camera activation: dark, focus ring, AF searches and locks, flash, photograph
+var af=$(".af"),tl=gsap.timeline();
+gsap.set(".vf,.tag,.hud,.cue,header",{opacity:0});
+tl.from(".ring",{scale:.55,opacity:0,duration:1,ease:"power3.out"})
+  .to(".rin",{rotate:140,transformOrigin:"50% 50%",duration:2.4,ease:"power2.inOut"},0)
+  .from(af,{opacity:0,scale:1.6,duration:.5},.2)
+  .to(af,{x:-120,y:-60,duration:.35,ease:"power1.inOut"}).to(af,{x:150,y:40,duration:.4,ease:"power1.inOut"}).to(af,{x:-40,y:70,duration:.3,ease:"power1.inOut"}).to(af,{x:0,y:0,duration:.35,ease:"power2.out"})
+  .to(af,{"--c":"#4DFF9A",scale:.78,duration:.15,yoyo:true,repeat:1})
+  .add(function(){click()},"+=.15")
+  .set(".shot",{opacity:1}).set(".ring,.af",{opacity:0})
+  .fromTo(fl,{opacity:1},{opacity:0,duration:.9,ease:"power2.out"})
+  .from(".shot .in",{scale:1.25,duration:2.2,ease:"power3.out"},"<")
+  .from(".sp .c i",{yPercent:110,duration:1.1,stagger:.07,ease:"power4.out"},"-=1.6")
+  .to(".vf,.tag,.hud,.cue,header",{opacity:1,duration:.9,stagger:.12},"-=.9");
+gsap.to(".shot .in",{yPercent:8,ease:"none",scrollTrigger:{trigger:".open",start:"top top",end:"bottom top",scrub:true}});
+gsap.to(".open h1",{xPercent:-8,ease:"none",scrollTrigger:{trigger:".open",start:"top top",end:"bottom top",scrub:true}});
+// 02 film rolls in, centres on frame 05, which breaks out to full screen
+var strip=$("#strip"),fms=[].slice.call(strip.children),hf=$("#hero-fm");
+function cx(){return hf.offsetLeft+hf.offsetWidth/2}
+function win(){var t=(innerHeight-hf.offsetHeight)/2,l=(innerWidth-hf.offsetWidth)/2;return"inset("+t+"px "+l+"px)"}
+var ft=gsap.timeline({scrollTrigger:{trigger:"#film",start:"top top",end:"+=450%",scrub:.7,pin:".stage",invalidateOnRefresh:true,
+ onUpdate:function(){fms.forEach(function(m){var r=m.getBoundingClientRect(),d=Math.min(1,Math.abs(r.left+r.width/2-innerWidth/2)/innerWidth);m.style.filter="brightness("+(1-d*.55)+")";m.style.transform="scale("+(1-d*.1)+")"})}}});
+ft.fromTo(strip,{x:function(){return innerWidth*1.05},rotation:-6,rotationX:12,y:60},{x:function(){return innerWidth/2-cx()},rotation:0,rotationX:0,y:0,ease:"none",duration:3.2})
+  .set(".ex",{opacity:1})
+  .fromTo(".ex",{clipPath:win},{clipPath:"inset(0px 0px)",ease:"power2.inOut",duration:1.1})
+  .from(".ex .in",{scale:1.25,duration:1.1,ease:"power2.out"},"<")
+  .to(".lab",{opacity:0,duration:.3},"<")
+  .to({},{duration:.7});
+// flash as the bright chapter appears
+ScrollTrigger.create({trigger:".bright",start:"top 60%",once:true,onEnter:function(){pulse(.9)}});
+// 03 moments
+gsap.utils.toArray(".bright .fr").forEach(function(fr){gsap.from(fr,{clipPath:"inset(100% 0 0 0)",duration:1.3,ease:"power3.inOut",scrollTrigger:{trigger:fr,start:"top 88%"}});gsap.fromTo(fr.querySelector(".in"),{yPercent:-5},{yPercent:5,ease:"none",scrollTrigger:{trigger:fr,start:"top bottom",end:"bottom top",scrub:true}})});
+gsap.from(".bright h2",{xPercent:-12,opacity:0,duration:1,scrollTrigger:{trigger:".bright h2",start:"top 88%"}});
+gsap.from(".n",{yPercent:60,opacity:0,stagger:.2,duration:1,scrollTrigger:{trigger:".mg",start:"top 70%"}});
+// 04 worlds: dark scenes open like a cut
+ScrollTrigger.create({trigger:".worlds",start:"top 60%",once:true,onEnter:function(){pulse(.5)}});
+gsap.from(".worlds h2",{yPercent:30,opacity:0,duration:1,scrollTrigger:{trigger:".worlds h2",start:"top 88%"}});
+gsap.utils.toArray(".w").forEach(function(w){var fr=w.querySelector(".fr");
+ gsap.from(fr,{clipPath:"inset(0 50% 0 50%)",duration:1.3,ease:"power3.inOut",scrollTrigger:{trigger:w,start:"top 82%"}});
+ gsap.from(w.querySelector("h3"),{yPercent:60,opacity:0,duration:1,delay:.4,scrollTrigger:{trigger:w,start:"top 82%"}});
+ gsap.fromTo(fr.querySelector(".in"),{yPercent:-6,scale:1.15},{yPercent:6,scale:1,ease:"none",scrollTrigger:{trigger:w,start:"top bottom",end:"bottom top",scrub:true}})});
+// 05 contact sheet: a red pencil circles the portrait frame
+var pen=$("#pen"),len=pen.getTotalLength();gsap.set(pen,{strokeDasharray:len,strokeDashoffset:len});
+gsap.to(pen,{strokeDashoffset:0,duration:1.4,ease:"power2.inOut",scrollTrigger:{trigger:"#cs",start:"top 65%"}});
+gsap.from("#cs .fr",{opacity:0,scale:.92,stagger:.08,duration:.7,scrollTrigger:{trigger:"#cs",start:"top 80%"}});
+gsap.from(".about h2",{yPercent:30,opacity:0,duration:1,scrollTrigger:{trigger:".about h2",start:"top 88%"}});
+// 06 contact
+gsap.from(".contact h2 .c i",{yPercent:110,stagger:.04,duration:1,ease:"power4.out",scrollTrigger:{trigger:".contact h2",start:"top 80%"}});
+})();
+</script>
+</body>
+</html>
